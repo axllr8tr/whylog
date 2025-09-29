@@ -9,7 +9,9 @@ package main
 import "github.com/axllr8tr/whylog"
 
 func main() {
-  logger := whylog.NewSimpleLogger() // creating a logging facility
+  // basic logging facility
+  logger := whylog.NewSimpleLogger() 
+  logger.MinLevel = whylog.TraceLevel; // make it display everything
 
   // standard loglevels
   logger.Log(whylog.TraceLevel, "querying db for user 12..34")
@@ -34,3 +36,4 @@ func main() {
   logger2.Logf(whylog.InfoError, "2 + 2 = %d", 4)
 }
 ```
+
